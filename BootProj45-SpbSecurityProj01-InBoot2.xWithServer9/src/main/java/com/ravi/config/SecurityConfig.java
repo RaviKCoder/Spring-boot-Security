@@ -18,7 +18,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 //		auth.inMemoryAuthentication().withUser("ramesh").password("{noop}hyd").roles("MANAGER");
 //		auth.inMemoryAuthentication().withUser("rajesh").password("{noop}vizag").roles("VISITOR");
 		
-		auth.inMemoryAuthentication().withUser("raja").password("$2a$10$mGdEG0rgYPlvqYm.n./4JuQV4gEQLWc2IvylHyvtvy7fwNyYdY8nC").roles("CUSTOMER").disabled(true);
+		auth.inMemoryAuthentication().passwordEncoder(new BCryptPasswordEncoder()).withUser("raja").password("$2a$10$mGdEG0rgYPlvqYm.n./4JuQV4gEQLWc2IvylHyvtvy7fwNyYdY8nC").roles("CUSTOMER").disabled(true);
 		auth.inMemoryAuthentication().passwordEncoder(new BCryptPasswordEncoder()).withUser("ramesh").password("$2a$10$GUuQc8hkB/znQX7cgTWeC.up3zjypgqXs6uNeDI0fQmmwyKVl2LqS").roles("MANAGER");
 		auth.inMemoryAuthentication().passwordEncoder(new BCryptPasswordEncoder()).withUser("rajesh").password("$2a$10$UDVviM17McCzgd.OJB2dHeYukkpflBSbRoL2epKrBuvIBazMXEBwa").roles("VISITOR");
 	}
